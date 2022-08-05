@@ -19,13 +19,13 @@ class mockTesting(unittest.TestCase):
         driver.get('https://www.youtube.com/')
         driver.maximize_window()
 
-    def test_nuevaprueba():
-        print("Hola")
+    def test_nuevaprueba(self):
+        driver = self.driver
+        driver.find_element(By.XPATH,'//*[@id="endpoint"]/tp-yt-paper-item/yt-formatted-string[(text()="Shorts")]')
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-        cls.driver.implicitly_wait(15)
 
 if __name__ == '__main__':
     unittest.main()
