@@ -25,6 +25,7 @@ class mockTesting(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
-        
+        cls.driver.implicitly_wait(15)
+
 if __name__ == '__main__':
     unittest.main()
