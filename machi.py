@@ -1,4 +1,5 @@
 import unittest
+from unittest import runner
 import selenium
 from selenium import webdriver
 import HtmlTestRunner
@@ -16,17 +17,17 @@ class mockTesting(unittest.TestCase):
         ser = Service('chromedriver.exe')
         cls.driver = webdriver.Chrome(service=ser, options=opt)
         driver = cls.driver
-        driver.get('https://www.youtube.com/')
+        driver.get('http://demo-store.seleniumacademy.com/')
         driver.maximize_window()
 
     def test_nuevaprueba(self):
         driver = self.driver
-        shorts_button = driver.find_element(By.XPATH,'//*[@id="endpoint"]/tp-yt-paper-item/yt-formatted-string[(text()="Shorts")]')
-        shorts_button.click()
+        #shorts_button = driver.find_element(By.XPATH,'//*[@id="endpoint"]/tp-yt-paper-item/yt-formatted-string[(text()="Shorts")]')
+        #shorts_button.click()
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main(runner=HtmlTestRunner.HTMLTestRunner(output="reportes", report_name="reporte_pruebas", open_in_browser=True))
