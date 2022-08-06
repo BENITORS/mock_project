@@ -15,7 +15,7 @@ class mockTesting(unittest.TestCase):
     def setUpClass(cls):
         opt = Options()
         opt.add_experimental_option('excludeSwitches', ['enable-logging'])
-        ser = Service('chromedriver.exe')
+        ser = Service('c:/chromedriver.exe')
         cls.driver = webdriver.Chrome(service=ser, options=opt)
         driver = cls.driver
         driver.get('http://demo-store.seleniumacademy.com/')
