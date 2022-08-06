@@ -26,10 +26,16 @@ class mockTesting(unittest.TestCase):
         ##shorts_button.click()
         women = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text()="Women")]')
         women.click
+    def test_segundaprueba(self):
+        driver = self.driver
+        accessories = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text()="Accessories")]')
+        accessories.click
 
     @classmethod
     def tearDownClass(cls):
+        time.sleep(10)
         cls.driver.quit()
+        
 
 if __name__ == '__main__':
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output="reportes", report_name="reporte_pruebas", open_in_browser=True))
