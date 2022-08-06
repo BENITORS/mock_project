@@ -1,3 +1,4 @@
+from re import search
 import unittest
 from unittest import runner
 import selenium
@@ -20,16 +21,25 @@ class mockTesting(unittest.TestCase):
         driver.get('http://demo-store.seleniumacademy.com/')
         driver.maximize_window()
 
-    def test_nuevaprueba(self):
+    def test4_nuevaprueba(self):
         driver = self.driver
         ##shorts_button = driver.find_element(By.XPATH,'//*[@id="endpoint"]/tp-yt-paper-item/yt-formatted-string[(text()="Shorts")]')
         ##shorts_button.click()
-        women = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text()="Women")]')
+        women = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text('')="Women")]')
         women.click
-    def test_segundaprueba(self):
+    def test3_segundaprueba(self):
         driver = self.driver
-        accessories = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text()="Accessories")]')
+        accessories = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text('')="Accessories")]')
         accessories.click
+    def test1_terceraprueba(self):
+        driver = self.driver
+        search = driver.find_element(By.ID, 'search')
+        search.send_keys('tee')
+    def test2_buscar(self):   
+        driver = self.driver
+        bottonsearch = driver.find_element(By. XPATH, '//*[@class="button search-button"]')
+        bottonsearch.click
+
 
     @classmethod
     def tearDownClass(cls):
