@@ -80,6 +80,11 @@ class mockTesting(unittest.TestCase):
         Confirmpassword.click()
         Confirmpassword.send_keys('Pistache27')
         time.sleep(3)
+        Signup = driver.find_element(By.ID, 'is_subscribed')
+        Signup.click()
+        time.sleep(2)
+        Registerbutton = driver.find_element(By.XPATH, '//*[@class="button" and @title="Register"]')
+        Registerbutton.click()
 
 
 
@@ -87,7 +92,7 @@ class mockTesting(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        time.sleep(10)
+        time.sleep(3)
         cls.driver.quit()
         
 
