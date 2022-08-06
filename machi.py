@@ -32,4 +32,4 @@ class mockTesting(unittest.TestCase):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    unittest.main(runner=HtmlTestRunner.HTMLTestRunner(output="reportes", report_name="reporte_pruebas", open_in_browser=True))
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output="reportes", report_name="reporte_pruebas", open_in_browser=True))
