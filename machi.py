@@ -24,8 +24,8 @@ class mockTesting(unittest.TestCase):
         driver = self.driver
         ##shorts_button = driver.find_element(By.XPATH,'//*[@id="endpoint"]/tp-yt-paper-item/yt-formatted-string[(text()="Shorts")]')
         ##shorts_button.click()
-        search = driver.find_element(By.ID, 'search')
-        search.send_keys('gusgri')
+        women = driver.find_element(By.XPATH, '//a[@class="level0 has-children" and (text()="Women")]')
+        women.click
 
     @classmethod
     def tearDownClass(cls):
