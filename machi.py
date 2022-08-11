@@ -1,5 +1,3 @@
-from lib2to3.pgen2 import driver
-from re import X
 import unittest
 import selenium
 from selenium import webdriver
@@ -7,6 +5,7 @@ import HtmlTestRunner
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support.ui import Select
 import os
 import time
 
@@ -85,6 +84,40 @@ class mockTesting(unittest.TestCase):
         time.sleep(2)
         Registerbutton = driver.find_element(By.XPATH, '//*[@class="button" and @title="Register"]')
         Registerbutton.click()
+    
+    def test6_loginyouraccount(self):
+        driver = self.driver
+        account2 = driver.find_element(By. XPATH, '//*[@class="label" and (text()="Account")]')
+        account2.click()
+        time.sleep(3)
+        Login = driver.find_element(By.XPATH, '//*[@title="Log In" and (text()="Log In")]')
+        Login.click()
+        time.sleep(3)
+        Emailaddress = driver.find_element(By. XPATH, '//*[@title="Email Address"]')
+        Emailaddress.click()
+        Emailaddress.send_keys('jesusruvalcaba194@gmail.com')
+        time.sleep(3)
+        Passwordaddress = driver.find_element(By. ID, 'pass')
+        Passwordaddress.click()
+        Passwordaddress.send_keys('Pistache27')
+        Loginbotton = driver.find_element(By. ID, 'send2')
+        Loginbotton.click()
+
+    def test7_Change_Language(self):
+        driver = self.driver
+        Language = driver.find_element(By. ID, 'select-language')
+        Language.click()
+        SelectLenguaje = Select(driver.find_element(By. XPATH, '//*[@id="select-language"]'))
+        SelectLenguaje.select_by_visible_text('French')
+
+    
+        
+
+        
+
+
+
+
 
 
 
